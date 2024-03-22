@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Reserva de Alojamiento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Simulador de Reserva de Alojamiento</h1>
+    </header>
+
+    <section id="busqueda">
+        <h2>Buscar Alojamientos Disponibles</h2>
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha">
+        <button id="buscarBtn">Buscar</button>
+    </section>
+
+    <section id="resultados">
+        <h2>Resultados</h2>
+        <div id="resultadosContainer">
+            <!-- Los resultados de la búsqueda se mostrarán aquí -->
+        </div>
+    </section>
+
+    <section id="detalles">
+        <h2>Detalles del Alojamiento</h2>
+        <div id="detallesContainer">
+            <!-- Los detalles del alojamiento seleccionado se mostrarán aquí -->
+        </div>
+        <button id="reservarBtn">Reservar</button>
+    </section>
+
+    <section id="formulario">
+        <h2>Formulario de Reserva</h2>
+        <form id="reservaForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="tarjeta">Número de Tarjeta:</label>
+            <input type="text" id="tarjeta" required>
+            <button type="submit">Confirmar Reserva</button>
+        </form>
+    </section>
+
+    <script src="js.js"></script>
+</body>
+</html>
