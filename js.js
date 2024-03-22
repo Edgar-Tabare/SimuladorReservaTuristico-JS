@@ -8,7 +8,7 @@ function Alojamiento(id, nombre, ubicacion, precio) {
 
 // Función para generar un precio aleatorio dentro de un rango
 function generarPrecio(min, max) {
-    return (Math.random() * (max - min) + min).toFixed(2); // Redondeamos a dos decimales
+    return (Math.random() * (max - min) + min).toFixed(2);
 }
 
 // Datos de ejemplo para los alojamientos
@@ -66,8 +66,8 @@ function mostrarDetalles(event) {
     // Almacenar el alojamiento seleccionado en sessionStorage
     sessionStorage.setItem('alojamientoSeleccionado', JSON.stringify(alojamientoSeleccionado));
 }
+// Evento para enviar el formulario de reserva
 
-// Evento submit para enviar el formulario de reserva
 document.getElementById('reservaForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -84,7 +84,7 @@ document.getElementById('reservaForm').addEventListener('submit', function(event
         alojamiento: JSON.parse(sessionStorage.getItem('alojamientoSeleccionado')) // Obtener alojamiento seleccionado de sessionStorage
     };
 
-    // Aquí puedes implementar la lógica para enviar la reserva
+    //  lógica para enviar la reserva
     console.log("Reserva:", reserva);
 });
 
