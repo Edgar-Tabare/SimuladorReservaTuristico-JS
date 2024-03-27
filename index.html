@@ -4,50 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Reserva de Alojamiento</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Simulador de Reserva de Alojamiento</h1>
     </header>
-
-    <section id="busqueda">
-        <h2>Buscar Alojamientos Disponibles</h2>
-        <label for="ubicacion">Ubicación:</label>
-        <input type="text" id="ubicacion">
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha">
-        <button id="buscarBtn">Buscar</button>
-    </section>
-
-    <section id="resultados">
-        <h2>Resultados</h2>
-        <div id="resultadosContainer">
-            <!-- Los resultados de la búsqueda se mostrarán aquí -->
+    <button id="limpiarLocalStorage" class="btn btn-primary">Limpiar localStorage</button>
+    <div class="container">
+        <div class="row" id="cardsContainer">
+            <!-- Las cards serán cargadas aquí desde JavaScript -->
         </div>
-    </section>
+    </div>
 
-    <section id="detalles">
-        <h2>Detalles del Alojamiento</h2>
-        <div id="detallesContainer">
-            <!-- Los detalles del alojamiento seleccionado se mostrarán aquí -->
-        </div>
-        <button id="reservarBtn">Reservar</button>
-    </section>
-
-    <section id="formulario">
-        <h2>Formulario de Reserva</h2>
+    <section id="reserva" style="display: none;">
+        <h2>Reserva de Alojamiento</h2>
         <form id="reservaForm">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            <label for="tarjeta">Número de Tarjeta:</label>
-            <input type="text" id="tarjeta" required>
-            <button type="submit">Confirmar Reserva</button>
+            <input type="text" id="nombre" class="form-control" pattern="[A-Za-z\s]+" required><br>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" class="form-control" required><br>
+            <label for="tarjeta">Tarjeta de Crédito:</label>
+            <input type="text" id="tarjeta" class="form-control" pattern="[0-9]{12}" required><br>
+            <label for="fechaEntrada">Fecha de Entrada:</label>
+            <input type="date" id="fechaEntrada" class="form-control" required><br>
+            <label for="fechaSalida">Fecha de Salida:</label>
+            <input type="date" id="fechaSalida" class="form-control" required><br>
+            <button type="submit" class="btn btn-primary">Reservar</button>
         </form>
     </section>
 
-    <script src="js.js"></script>
+    <div id="mensajeReserva" style="display: none;">
+        <input type="text" id="mensaje" class="form-control" readonly>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/reserva.js"></script>
+    <script src="js/sistemareserva.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
